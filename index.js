@@ -1,3 +1,6 @@
+var _ = require('lodash');
+var irc = require('irc');
+
 module.exports = function irc(sails) {
 
     return {
@@ -16,7 +19,6 @@ module.exports = function irc(sails) {
             }
 
             sails.after(eventsToWaitFor, hook.signIn);
-
 
             // You must trigger `cb` so sails can continue loading.  If you pass in an error, sails will fail to load, and display your error on the console.
             return cb();
